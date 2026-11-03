@@ -22,4 +22,8 @@ not match is refused.
 CI runs that same checker (`scripts/quality/check-themes.py --catalogue`) from the NPDev repository, so a theme is
 judged by exactly the rules the Manager enforces.
 
-The four seasonal themes here are NPDev's own, published under MIT.
+## Licence
+
+Everything in this repository is open source and free to use, under the [MIT licence](LICENSE).
+The four seasonal themes here are NPDev's own. By submitting a theme you agree it is published under MIT too, so its
+`license` field should say `MIT` (or another free, open-source licence).
