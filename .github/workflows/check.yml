@@ -1,0 +1,23 @@
+name: check-themes
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: catalogue
+      # The checker lives in the NPDev repo so a theme is judged by exactly the rules the Manager and every
+      # generated app enforce (structure, WCAG contrast floors, hostile-value refusal). One checker, no copy.
+      - uses: actions/checkout@v4
+        with:
+          repository: MarceloGiazzon/NPDevGeneral
+          ref: main
+          path: npdev
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python npdev/scripts/quality/check-themes.py --catalogue catalogue

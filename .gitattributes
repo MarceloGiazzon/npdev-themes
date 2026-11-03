@@ -1,0 +1,4 @@
+* text=auto
+# Theme files are hashed byte for byte (index.json sha256); never let git rewrite their line endings.
+themes/*.json -text
+index.json -text
